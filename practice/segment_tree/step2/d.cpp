@@ -3,21 +3,21 @@
 using namespace std;
 
 struct item {
-	int c; //count of 1s
+	int val;
 };
 
 struct segtree {
 	int size;
 	vector<item> values;
 
-	item NEUTRAL_ITEM = {0};
+	item NEUTRAL_ITEM = {INT_MIN};
 	
 	item single (int v) {
 		return {v};
 	}
 	
 	item merge (item a, item b){
-		return single(a.c + b.c);
+		return single(max(a.val, b.val));
 	}
 
 	segtree(int n){
@@ -43,38 +43,50 @@ struct segtree {
 		build(a, 0, 0, size);
 	}
 
-	void set (int i, int x, int lx, int rx){
+	void set (int i, int v, int x, int lx, int rx){
 		if (rx-lx==1){
-			values[x].c = 1 - values[x].c;
+			values[x] = single(v);
 			return;
 		}
 		int m = (lx + rx)/2;
 		if (i < m)
-			set(i, 2*x + 1, lx, m);
+			set(i, v, 2*x + 1, lx, m);
 		else
-			set(i, 2*x + 2, m, rx);
+			set(i, v, 2*x + 2, m, rx);
 		values[x] = merge(values[2*x+1], values[2*x+2]);
 	}
 
-	void set (int i){
-		set(i, 0, 0, size);
+	void set (int i, int v){
+		set(i, v, 0, 0, size);
 	}
 
-	int get (int k, int x, int lx, int rx){
+	int get (int k, int l, int x, int lx, int rx){
+		if (rx <= l) {
+			return -1;
+		}
+		if (k > values[x].val) {
+			return -1;
+		}
 		if (rx - lx == 1) {
 			return lx;
 		}
 		int m = (lx + rx)/2;
-		int sl = values[2*x+1].c;
-		if (k < sl) {
-			return get(k, 2*x+1, lx, m);
+		int vl = values[2*x+1].val;
+		//if (k <= vl) {
+		//	return get(k, l, 2*x+1, lx, m);
+		//} else {
+		//	return get(k, l, 2*x+2, m, rx);
+		//}
+		int res1 = get(k, l, 2*x+1, lx, m);
+		if (res1==-1){
+			return get(k, l, 2*x+2, m, rx);
 		} else {
-			return get(k-sl, 2*x+2, m, rx);
+			return res1;
 		}
-	}	
+	}
 
-	int get (int k){
-		return get(k, 0, 0, size);
+	int get (int k, int l){
+		return get(k, l, 0, 0, size);
 	} 
 
 };
@@ -88,13 +100,16 @@ int main() {
 	for (auto& u:a) cin >> u;
 	segtree st(n);
 	st.build(a);
-	// for (auto& u:st.values) cout << u.c << ' '; cout << '\n';
+	//cout << "debug: \n";
+	//for (auto& u:st.values) cout << u.val << ' '; cout << '\n';
 	while (m--){
-		int op, x; cin >> op >> x;
+		int op; cin >> op;
 		if (op==1) {
-			st.set(x);
+			int i,v; cin>> i >> v;
+			st.set(i,v);
 		} else {
-			int res = st.get(x);
+			int x, l; cin >> x >> l;
+			int res = st.get(x, l);
 			cout << res << '\n';
 		}
 	}
