@@ -185,9 +185,10 @@
 #
 # alias cd=cd_func
 
-alias l='ls -lrth'
+alias l='ls -lrth --color'
+alias la='ls -lrtha --color'
 alias ebrc='vi ~/.bashrc'
-alias evrc='vi ~/.vimrc'
+alias evrc='vi ~/.vim/.vimrc'
 alias ebpf='vi ~/.bash_profile'
 alias ..='cd ..'
 alias ...='cd ../..'
