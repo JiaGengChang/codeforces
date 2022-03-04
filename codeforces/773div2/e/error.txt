@@ -1,0 +1,6 @@
+[t, l, r, x] = [0, 3, 4, 0]
+[t, l, r, x] = [0, 3, 5, 1]
+[m[v], *active.upper_bound(v)] = [5, 6]
+[t, l, r, x] = [0, 1, 4, 1]
+[m[v], *active.upper_bound(v)] = [4, 2]
+[t, l, r, x] = [0, 1, 1, 0]
