@@ -188,7 +188,7 @@
 alias l='ls -lrth --color'
 alias la='ls -lrtha --color'
 alias ebrc='vi ~/.bashrc'
-alias evrc='vi ~/.vim/.vimrc'
+alias evrc='vi ~/.vimrc'
 alias ebpf='vi ~/.bash_profile'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -200,5 +200,27 @@ alias c="clear"
 mcd() { mkdir -p "$@" && cd "$@"; }
 
 # open just solution window
-alias va='vi -c "e sol.cpp|vsplit input.txt|split output.txt|split error.txt"'
-mcp() { mkdir -p "$@" && cp ~/.vim/templates/sol.cpp "$@"/sol.cpp && cp ~/.vim/templates/sol.cpp "$@"/brute.cpp && cp ~/cp/random.cpp "$@"/random.cpp && cp ~/cp/checker.sh "$@"/checker.sh && touch "$@"/output.txt "$@"/input.txt "$@"/error.txt; }
+alias vs='vi -c "e sol.cpp|vsplit input.txt|split output.txt|split error.txt"'
+alias vb='vi -c "e brute.cpp|vsplit input.txt|split output.txt|split error.txt"'
+alias va='vi -c "e brute.cpp|e sol.cpp|vsplit input.txt|split output.txt|split error.txt"'
+mcp() { 
+  mkdir -p "$@" && 
+  cp ~/.vim/templates/sol.cpp "$@"/sol.cpp && 
+  cp ~/.vim/templates/sol.cpp "$@"/brute.cpp && 
+  cp ~/cp/random.cpp "$@"/random.cpp && 
+  cp ~/cp/checker.sh "$@"/checker.sh && 
+  cp ~/cp/debug.h "$@"/debug.h && 
+  touch "$@"/output.txt "$@"/input.txt "$@"/error.txt; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
