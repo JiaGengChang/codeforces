@@ -39,7 +39,7 @@ using namespace std;
 #define IOS ios_base::sync_with_stdio(0); 
 #define INF 1001001001
 #define MOD 1000000007
-tdefine PI 3.t415926535897932384626
+#define PI 3.1415926535897932384626
 #define DBG(vari) cerr<<#vari<<" = "<<(vari)<<endl;
 #define printA(a,L,R) FE(i,L,R) cout << a[i] << (i==R?'\n':' ')
 #define printV(a) printA(a,0,a.size()-1)
