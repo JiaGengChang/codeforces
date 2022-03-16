@@ -200,9 +200,10 @@ alias c="clear"
 mcd() { mkdir -p "$@" && cd "$@"; }
 
 # open just solution window
+alias vv='vi -c "e error.txt|split sol.cpp|below split input.txt|rightb vsplit output.txt|1 res +20|2 res +10"'
 alias vs='vi -c "e sol.cpp|vsplit input.txt|split output.txt|split error.txt"'
 alias vb='vi -c "e brute.cpp|vsplit input.txt|split output.txt|split error.txt"'
-alias va='vi -c "e brute.cpp|e sol.cpp|vsplit input.txt|split output.txt|split error.txt"'
+alias va='vi -c "e random.cpp|e brute.cpp|e sol.cpp|vsplit input.txt|split output.txt|split error.txt"'
 mcp() { 
   mkdir -p "$@" && 
   cp ~/.vim/templates/sol.cpp "$@"/sol.cpp && 
@@ -210,7 +211,8 @@ mcp() {
   cp ~/cp/random.cpp "$@"/random.cpp && 
   cp ~/cp/checker.sh "$@"/checker.sh && 
   cp ~/cp/debug.h "$@"/debug.h && 
-  touch "$@"/output.txt "$@"/input.txt "$@"/error.txt; 
+  touch "$@"/output.txt "$@"/input.txt "$@"/error.txt &&
+  cd "$@";
 }
 
 

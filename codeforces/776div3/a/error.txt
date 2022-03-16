@@ -1,0 +1,16 @@
+Case #1
+[s,c] = ["abcde", "c"]
+[s.size()] = [5]
+Case #2
+[s,c] = ["abcde", "b"]
+[s.size()] = [5]
+Case #3
+[s,c] = ["x", "y"]
+[s.size()] = [1]
+Case #4
+[s,c] = ["aaaaaaaaaaaaaaa", "a"]
+[s.size()] = [15]
+Case #5
+[s,c] = ["contest", "t"]
+[s.size()] = [7]
+2671ms

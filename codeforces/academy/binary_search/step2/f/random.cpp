@@ -43,8 +43,8 @@ int main(int argc, char* argv[]) {
   srand(atoi(argv[1]));
   
   //random number
-  //int t = rnum(2,200000);
-  int t = 200000;
+  int t = rnum(2,10000);
+  //int t = 10000;
   int p = rnum(1,t-1);
   
   //random string
