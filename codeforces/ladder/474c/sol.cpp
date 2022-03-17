@@ -46,11 +46,28 @@ using namespace std;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef pair<int,int> ii;
-bool ckmin(ll& a,ll b){return b<a ? a=b,true:false;
+bool ckmin(ll& a,ll b){return b<a ? a=b,true:false;}
 bool ckmax(ll& a,ll b){return b>a ? a=b,true:false;}
 
+ll x,d,y,z; 
+vector<ll> ans;
+
 void solve() {
-    ;
+    debug(y);
+    if(ans.size()>9999) {
+        cout<<"-1";
+        return;
+    }
+    if(y==0){
+        cout<<ans.size()<<'\n';
+        printV(ans);
+        return;
+    }
+    int k=(int)(log2(y+1)); //2^k-1 <= X
+    F(rep,0,k) ans.push_back(z);
+    z += d;
+    y -= (1<<k)-1ll;
+    solve();
 }
 
 signed main() {
@@ -61,14 +78,15 @@ signed main() {
     auto start=chrono::high_resolution_clock::now();
 #endif
 
+    IOS;
     cin.tie(0); 
     cout.tie(0);
-    int t = 1;
-    cin >> t;
-    for (int tc = 1; tc <= t; ++tc) {
-        cerr << "Case #" << tc << '\n';
-        solve();
-    }
+    cin>>x>>d;
+    ans.resize(0);
+    y=x;
+    z=1;
+    solve();
+
 #ifndef ONLINE_JUDGE
     auto stop=chrono::high_resolution_clock::now();
     auto duration=chrono::duration_cast<chrono::microseconds>(stop-start);
