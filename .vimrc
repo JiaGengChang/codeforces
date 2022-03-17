@@ -19,6 +19,11 @@ autocmd filetype cpp nnoremap <c-n> :!./%:r<CR>
 autocmd filetype cpp nnoremap <F12> :!gdb ./%:r <CR>
 autocmd filetype cpp nnoremap <c-m> :!gdb ./%:r <CR>
 
+nnoremap <c-h> :wincmd h<CR>
+nnoremap <c-l> :wincmd l<CR>
+nnoremap <c-j> :wincmd j<CR>
+nnoremap <c-k> :wincmd k<CR>
+
 nnoremap <c-s> :w<CR>
 inoremap <c-s> <Esc>:w<CR>a
 vnoremap <c-s> <Esc>:w<CR> 
