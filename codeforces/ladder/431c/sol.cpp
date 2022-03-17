@@ -46,8 +46,7 @@ using namespace std;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef pair<int,int> ii;
-const int fx[4][2] = {{0,1}, {0,-1}, {1,0}, {-1,0}};
-bool ckmin(ll& a,ll b){return b<a ? a=b,true:false;}
+bool ckmin(ll& a,ll b){return b<a ? a=b,true:false;
 bool ckmax(ll& a,ll b){return b>a ? a=b,true:false;}
 
 void solve() {
