@@ -40,14 +40,21 @@ using namespace std;
 #define INF 1001001001
 #define MOD 1000000007
 #define PI 3.1415926535897932384626
-#define DBG(vari) cerr<<#vari<<" = "<<(vari)<<endl;
+#define MX 100001
 #define printA(a,L,R) FE(i,L,R) cout << a[i] << (i==R?'\n':' ')
 #define printV(a) printA(a,0,a.size()-1)
+#define f first
+#define s second
+#define ins insert
+#define lb lower_bound
+#define ub upper_bound
+#define mp make_pair
+#define pb push_back
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef pair<int,int> ii;
-bool ckmin(ll& a,ll b){return b<a ? a=b,true:false;
-bool ckmax(ll& a,ll b){return b>a ? a=b,true:false;}
+template<class T> bool ckmin(T& a,const T& b) {return b<a?a=b,1:0;}
+template<class T> bool ckmax(T& a,const T& b) {return b>a?a=b,1:0;}
 
 void solve() {
     ;
@@ -58,22 +65,15 @@ signed main() {
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
     freopen("error.txt","w", stderr);
-    auto start=chrono::high_resolution_clock::now();
 #endif
-
     cin.tie(0); 
     cout.tie(0);
-    int t = 1;
-    cin >> t;
-    for (int tc = 1; tc <= t; ++tc) {
+    int T = 1;
+    cin >> T;
+    F(i,0,T){
         cerr << "Case #" << tc << '\n';
         solve();
     }
-#ifndef ONLINE_JUDGE
-    auto stop=chrono::high_resolution_clock::now();
-    auto duration=chrono::duration_cast<chrono::microseconds>(stop-start);
-    cerr << duration.count() << "ms\n";
-#endif
     return 0;
 }
 
