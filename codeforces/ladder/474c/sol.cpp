@@ -46,61 +46,33 @@ using namespace std;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 typedef pair<int,int> ii;
-bool ckmin(ll& a,ll b){return b<a ? a=b,true:false;}
+bool ckmin(ll& a,ll b){return b<a ? a=b,true:false;
 bool ckmax(ll& a,ll b){return b>a ? a=b,true:false;}
 
 void solve() {
-    int n,k,d; cin>>n>>k>>d;
-    int dp[n+1][k+1];
-    FE(i,1,n) {
-        FE(j,1,k) {
-            dp[i][j]=(i==j)?1:0;
-        }
-    }
-    FE(i,1,n){
-        dp[i][1]=1;
-        FE(j,2,min(k,i-1)) {
-            F(c,1,j) {
-                dp[i][j] += dp[i-c][j];
-                if (dp[i][j]>=MOD) dp[i][j]-=MOD;
-            }
-            FE(c,1,j) {
-                dp[i][j] += dp[i-j][c];
-                if(dp[i][j]>=MOD) dp[i][j]-=MOD;
-            }
-        }
-    }
-    int ans=0;
-    FE(j,d,k) {
-        ans += dp[n][j];
-        if (ans>=MOD) ans-=MOD;
-    }
-    cout<<ans<<"\n";
-    FE(i,1,n){
-        FE(j,1,k) {
-            cerr<<dp[i][j]<<(j==k?"\n":" ");
-        }
-    }
+    ;
 }
 
 signed main() {
-    #ifndef ONLINE_JUDGE
+#ifndef ONLINE_JUDGE
     freopen("input.txt", "r", stdin);
     freopen("output.txt", "w", stdout);
     freopen("error.txt","w", stderr);
     auto start=chrono::high_resolution_clock::now();
 #endif
 
-    cin.tie(0);
+    cin.tie(0); 
     cout.tie(0);
     int t = 1;
+    cin >> t;
     for (int tc = 1; tc <= t; ++tc) {
+        cerr << "Case #" << tc << '\n';
         solve();
     }
 #ifndef ONLINE_JUDGE
     auto stop=chrono::high_resolution_clock::now();
     auto duration=chrono::duration_cast<chrono::microseconds>(stop-start);
-    //cerr << duration.count() << "ms\n";
+    cerr << duration.count() << "ms\n";
 #endif
     return 0;
 }
