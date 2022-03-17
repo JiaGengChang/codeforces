@@ -208,9 +208,9 @@ mcp() {
   mkdir -p "$@" && 
   cp ~/.vim/templates/sol.cpp "$@"/sol.cpp && 
   cp ~/.vim/templates/sol.cpp "$@"/brute.cpp && 
-  cp ~/cp/random.cpp "$@"/random.cpp && 
-  cp ~/cp/checker.sh "$@"/checker.sh && 
-  cp ~/cp/debug.h "$@"/debug.h && 
+  cp ~/vimcp/random.cpp "$@"/random.cpp && 
+  cp ~/vimcp/checker.sh "$@"/checker.sh && 
+  cp ~/vimcp/debug.h "$@"/debug.h && 
   touch "$@"/output.txt "$@"/input.txt "$@"/error.txt &&
   cd "$@";
 }
