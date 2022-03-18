@@ -72,43 +72,80 @@ void solve() {
     }
     sort(ALL(C));//sort by ascending cost
     sort(ALL(D));
+    int ans=0;
     int nc = C.size(), nd = D.size();
     int cmaxB[nc], dmaxB[nd];//prefix max
-    cmaxB[0] = C[0].s;
-    dmaxB[0] = D[0].s;
-    F(i,1,nc) cmaxB[i] = max(cmaxB[i-1],C[i].s);
-    F(i,1,nd) dmaxB[i] = max(dmaxB[i-1],D[i].s);
-    int ans=0;
-    //two coin or two diamond fountains
-    vi mixB(2,-1);
-    F(i,0,nc) if(C[i].f<=c) ckmax(mixB[0],C[i].s);
-    F(i,0,nd) if(D[i].f<=d) ckmax(mixB[1],D[i].s);
-    if(mixB[0]>-1&&mixB[1]>-1) ans = mixB[0]+mixB[1];
-    
-    //one coin fountain, one diamond fountain
-    //p1=p2
-    int sepB(2,-1);
-    F(i,0,nc-1) {
-        if(C[i].f*2>c) break;
-        if(C[i].f==C[i+1].f) {
-            ckmax(sepB[0],C[i].s+C[i+1].s);
-        }
+    if(nc>0) {
+        cmaxB[0] = C[0].s;
+        F(i,1,nc) cmaxB[i] = max(cmaxB[i-1],C[i].s);
     }
-    //p2>p1. fix p2
-    FFE(i,nc-1,0){
-        if(C[0].f+C[i].f>c) continue;
-        int l=0;
-        int r=i;
-        while(r-l>1){
-            int m=(l+r)/2;
-            if(C[m].f+C[i].f<=c){
-                l=m;
-            } else {
-                r=m;
+    if(nd>0) {
+        dmaxB[0] = D[0].s;
+        F(i,1,nd) dmaxB[i] = max(dmaxB[i-1],D[i].s);
+    }
+
+    //one coin fountain, one diamond fountain
+    if(nc>0 && nd>0){
+        vi mixB(2,-1);
+        F(i,0,nc) if(C[i].f<=c) ckmax(mixB[0],C[i].s);
+        F(i,0,nd) if(D[i].f<=d) ckmax(mixB[1],D[i].s);
+        if(mixB[0]>-1&&mixB[1]>-1) ans = mixB[0]+mixB[1];
+    }
+    
+    vi sepB(2,-1);
+    //two coin fountains
+    //p1=p2
+    if(nc>1){
+        F(i,0,nc-1) {
+            if(C[i].f*2>c) break;
+            if(C[i].f==C[i+1].f) {
+                ckmax(sepB[0],C[i].s+C[i+1].s);
             }
         }
-        ckmax(sepB[0],C[i].s+cmaxB[l]);
+        //p2>p1. fix p2
+        FFE(i,nc-1,1){
+            if(C[0].f+C[i].f>c) continue;
+            int l=0;
+            int r=i;
+            while(r-l>1){
+                int m=(l+r)/2;
+                if(C[m].f+C[i].f<=c){
+                    l=m;
+                } else {
+                    r=m;
+                }
+            }
+            ckmax(sepB[0],C[i].s+cmaxB[l]);
+        }
     }
+    if(nd>1){
+        //two diamond fountains
+        //p1=p2
+        F(i,0,nd-1) {
+            if(D[i].f*2>c) break;
+            if(D[i].f==D[i+1].f) {
+                ckmax(sepB[1],D[i].s+D[i+1].s);
+            }
+        }
+        //p2>p1. fix p2
+        FFE(i,nd-1,1){
+            if(D[0].f+D[i].f>d) continue;
+            int l=0;
+            int r=i;
+            while(r-l>1){
+                int m=(l+r)/2;
+                if(D[m].f+D[i].f<=d){
+                    l=m;
+                } else {
+                    r=m;
+                }
+            }
+            ckmax(sepB[1],D[i].s+dmaxB[l]);
+        }
+    }
+    ckmax(ans,sepB[0]);
+    ckmax(ans,sepB[1]);
+    cout<<ans<<'\n';
 }
 
 signed main() {
