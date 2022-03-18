@@ -11,7 +11,7 @@ set mouse=a
 
 "Theme"
 let g:solarized_termcolors=256
-set background=light
+set background=dark
 colorscheme desert
 
 "build, run, debug"
@@ -29,9 +29,9 @@ nnoremap <c-j> :wincmd j<CR>
 nnoremap <c-k> :wincmd k<CR>
 
 "ergonomic write buffer"
-nnoremap <c-s> :w<CR>
-inoremap <c-s> <Esc>:w<CR>a
-vnoremap <c-s> <Esc>:w<CR> 
+nnoremap <c-w> :w<CR>
+inoremap <c-w> <Esc>:w<CR>a
+vnoremap <c-w> <Esc>:w<CR> 
 
 "quit all windows"
 nnoremap <c-q> :wqa<CR>

@@ -71,7 +71,7 @@ signed main() {
     int T = 1;
     cin >> T;
     F(i,0,T){
-        cerr << "Case #" << T << '\n';
+        cerr << "Case #" << tc << '\n';
         solve();
     }
     return 0;

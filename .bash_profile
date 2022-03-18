@@ -24,14 +24,9 @@
 # User dependent .bash_profile file
 
 # source the users bashrc if it exists
-# if [ -f "${HOME}/.bashrc" ] ; then
-#   source "${HOME}/.bashrc"
-# fi
-
-# source the symlink bashrc to cp directory
-if [ -h ~/.bashrc ]; then
-  . ~/.bashrc
-fi  
+if [ -f "${HOME}/.bashrc" ] ; then
+  source "${HOME}/.bashrc"
+fi
 
 # Set PATH so it includes user's private bin if it exists
 # if [ -d "${HOME}/bin" ] ; then
