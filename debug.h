@@ -1,3 +1,7 @@
+/*
+ * Class of debug functions that output to cerr
+ */
+
 #include <bits/stdc++.h>
 
 using namespace std;

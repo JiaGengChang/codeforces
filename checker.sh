@@ -1,3 +1,4 @@
+# wrapper script to test brute force solution against efficient solution
 g++ sol.cpp -o sol -DONLINE_JUDGE
 g++ brute.cpp -o brute -DONLINE_JUDGE
 g++ random.cpp -o random
