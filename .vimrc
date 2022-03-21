@@ -16,11 +16,11 @@ colorscheme desert
 
 "build, run, debug"
 autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++17 % -o %:r -Wl,--stack,268435456<CR>
-autocmd filetype cpp nnoremap <c-b> :w <bar> !g++ -std=c++17 % -o %:r -Wl,--stack,268435456<CR>
+autocmd filetype cpp nnoremap <c-1> :w <bar> !g++ -std=c++17 % -o %:r -Wl,--stack,268435456<CR>
 autocmd filetype cpp nnoremap <F10> :!./%:r<CR>
-autocmd filetype cpp nnoremap <c-n> :!./%:r<CR>
+autocmd filetype cpp nnoremap <c-3> :!./%:r<CR>
 autocmd filetype cpp nnoremap <F12> :!gdb ./%:r <CR>
-autocmd filetype cpp nnoremap <c-m> :!gdb ./%:r <CR>
+autocmd filetype cpp nnoremap <c-4> :!gdb ./%:r <CR>
 
 "window nav"
 nnoremap <c-h> :wincmd h<CR>
