@@ -3,5 +3,8 @@
 */.vscode
 *.swp
 practice/*/debug.h
+practice/*/input.txt
+practice/*/output.txt
+practice/*/error.txt
 
 .vim/.netrwhist
