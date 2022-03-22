@@ -56,9 +56,6 @@ void solve(){
 
 int main(){
 		
-	//code goes here
-	cout << "hello world\n";
-
 	return 0;
 }
 

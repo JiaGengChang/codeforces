@@ -30,8 +30,6 @@ void solve(){
 
 int main(){
 		
-	//code goes here
-	cout << "hello world\n";
 	solve();
 
 	return 0;
