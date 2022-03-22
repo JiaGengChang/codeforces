@@ -16,7 +16,7 @@
 using namespace std;
 
 #ifndef ONLINE_JUDGE
-#include "debug.h"
+#include "../../../../debug.h"
 #else 
 #define debug(x...)
 #endif
