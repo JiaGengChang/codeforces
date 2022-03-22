@@ -2,3 +2,6 @@
 .vscode
 */.vscode
 *.swp
+./practice/debug.h
+
+.vim/.netrwhist

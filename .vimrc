@@ -10,17 +10,13 @@ set ruler
 set mouse=a
 
 "Theme"
-let g:solarized_termcolors=256
 set background=dark
-colorscheme desert
+colorscheme default
 
 "build, run, debug cpp files"
-autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++17 % -o %:r -Wl,--stack,268435456<CR>
-autocmd filetype cpp nnoremap <c-1> :w <bar> !g++ -std=c++17 % -o %:r -Wl,--stack,268435456<CR>
+autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -Wall -Wextra -pedantic --std=c++17 -O2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 % -o %:r -Wl,--stack,268435456<CR>
 autocmd filetype cpp nnoremap <F10> :!./%:r<CR>
-autocmd filetype cpp nnoremap <c-3> :!./%:r<CR>
 autocmd filetype cpp nnoremap <F12> :!gdb ./%:r <CR>
-autocmd filetype cpp nnoremap <c-4> :!gdb ./%:r <CR>
 
 "window nav"
 nnoremap <c-h> :wincmd h<CR>
