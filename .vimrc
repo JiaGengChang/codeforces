@@ -14,7 +14,7 @@ set background=dark
 colorscheme default
 
 "build, run, debug cpp files"
-autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -Wall -Wextra -pedantic --std=c++17 -O2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 % -o %:r -Wl,--stack,268435456<CR>
+autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -Wall -Wextra -pedantic --std=c++17 -O2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -Wno-variadic-macros % -o %:r -Wl,--stack,268435456<CR>
 autocmd filetype cpp nnoremap <F10> :!./%:r<CR>
 autocmd filetype cpp nnoremap <F12> :!gdb ./%:r <CR>
 
