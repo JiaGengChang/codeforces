@@ -185,6 +185,7 @@
 #
 # alias cd=cd_func
 
+# common linux commands
 alias l='ls -lrth --color'
 alias la='ls -lrtha --color'
 alias ebrc='vi ~/.bashrc'
@@ -197,20 +198,28 @@ alias .....='cd ../../../..'
 alias refresh='source ~/.bashrc'
 alias c="clear"
 
+# create directory and cd into it
 mcd() { mkdir -p "$@" && cd "$@"; }
 
-# open just solution window
+# open solution file, error file, input file and output file
+
+# vv = vertical screen mode
 alias vv='vi -c "e error.txt|split sol.cpp|below split input.txt|rightb vsplit output.txt|1 res +20|2 res +10"'
+
+# vs = horizontal screen mode
 alias vs='vi -c "e sol.cpp|vsplit input.txt|split output.txt|split error.txt"'
-alias vb='vi -c "e brute.cpp|vsplit input.txt|split output.txt|split error.txt"'
+
+# open solution file, error file, input file, output file, test generator in horizontal screen mode
 alias va='vi -c "e random.cpp|e brute.cpp|e sol.cpp|vsplit input.txt|split output.txt|split error.txt"'
+
+# create directory for writing solution
 mcp() { 
   mkdir -p "$@" && 
   cp ~/.vim/templates/sol.cpp "$@"/sol.cpp && 
   cp ~/.vim/templates/sol.cpp "$@"/brute.cpp && 
-  cp ~/vimcp/random.cpp "$@"/random.cpp && 
-  cp ~/vimcp/checker.sh "$@"/checker.sh && 
-  cp ~/vimcp/debug.h "$@"/debug.h && 
+  cp ~/codeforces/random.cpp "$@"/random.cpp && 
+  cp ~/codeforces/checker.sh "$@"/checker.sh && 
+  cp ~/codeforces/debug.h "$@"/debug.h && 
   touch "$@"/output.txt "$@"/input.txt "$@"/error.txt &&
   cd "$@";
 }

@@ -14,7 +14,7 @@ let g:solarized_termcolors=256
 set background=dark
 colorscheme desert
 
-"build, run, debug"
+"build, run, debug cpp files"
 autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++17 % -o %:r -Wl,--stack,268435456<CR>
 autocmd filetype cpp nnoremap <c-1> :w <bar> !g++ -std=c++17 % -o %:r -Wl,--stack,268435456<CR>
 autocmd filetype cpp nnoremap <F10> :!./%:r<CR>
@@ -28,21 +28,21 @@ nnoremap <c-l> :wincmd l<CR>
 nnoremap <c-j> :wincmd j<CR>
 nnoremap <c-k> :wincmd k<CR>
 
-"ergonomic write buffer"
+"write to buffer"
 nnoremap <c-w> :w<CR>
 inoremap <c-w> <Esc>:w<CR>a
 vnoremap <c-w> <Esc>:w<CR> 
 
-"quit all windows"
+"write and close all windows"
 nnoremap <c-q> :wqa<CR>
 inoremap <c-q> <Esc>:wqa<CR>
 vnoremap <c-q> <Esc>:wqa<CR>
 
-"Select and yank all"
+"Select all, yank all"
 nnoremap <c-a> ggVG
 vnoremap <c-x> "*y
 
-"Autocompletion"
+"Brackets autocompletion"
 inoremap { {}<Left>
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
