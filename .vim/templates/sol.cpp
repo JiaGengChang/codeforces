@@ -68,12 +68,7 @@ signed main() {
 #endif
     cin.tie(0); 
     cout.tie(0);
-    int T = 1;
-    cin >> T;
-    F(i,0,T){
-        cerr << "Case #" << T << '\n';
-        solve();
-    }
+    solve();
     return 0;
 }
 
