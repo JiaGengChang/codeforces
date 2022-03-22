@@ -191,6 +191,7 @@ alias la='ls -lrtha --color'
 alias ebrc='vi ~/.bashrc'
 alias evrc='vi ~/.vimrc'
 alias ebpf='vi ~/.bash_profile'
+alias etmp='vi ~/.vim/templates/sol.cpp'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -216,9 +217,9 @@ alias va='vi -c "e random.cpp|e brute.cpp|e sol.cpp|vsplit input.txt|split outpu
 mcp() { 
   mkdir -p "$@" && 
   cp ~/.vim/templates/sol.cpp "$@"/sol.cpp && 
-  cp ~/.vim/templates/sol.cpp "$@"/brute.cpp && 
-  cp ~/codeforces/random.cpp "$@"/random.cpp && 
-  cp ~/codeforces/checker.sh "$@"/checker.sh && 
+#  cp ~/.vim/templates/sol.cpp "$@"/brute.cpp && 
+#  cp ~/codeforces/random.cpp "$@"/random.cpp && 
+#  cp ~/codeforces/checker.sh "$@"/checker.sh && 
   cp ~/codeforces/debug.h "$@"/debug.h && 
   touch "$@"/output.txt "$@"/input.txt "$@"/error.txt &&
   cd "$@";
