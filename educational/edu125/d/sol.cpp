@@ -16,6 +16,7 @@ using namespace std;
 #define RALL(c) (c).rbegin(),(c).rend() 
 #define PRESENT(c,x) ((c).find(x) != (c).end())
 #define FASTIO ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define INF 1001001001
 #define MOD 1000000007
 #define PI 3.1415926535897932384626
 #define MX 100001
