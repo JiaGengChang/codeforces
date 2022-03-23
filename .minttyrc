@@ -1,8 +1,8 @@
-ThemeFile=mintty
+ThemeFile=xterm
 FontHeight=14
 CursorType=line
-Columns=93
-Rows=70
+Columns=71
+Rows=59
 CursorBlinks=no
 
 ClicksPlaceCursor=yes
@@ -22,7 +22,11 @@ Cyan=42,161,152
 BoldCyan=147,161,161
 White=238,232,213
 BoldWhite=253,246,227
-Term=mintty
+Term=xterm
 BellType=0
 MiddleClickAction=void
 RightClickAction=paste
+BackgroundColour=0,0,0
+FontSmoothing=default
+BoldAsFont=no
+ForegroundColour=255,255,255
