@@ -1,31 +1,37 @@
 #include <bits/stdc++.h>
-
-using namespace std;
-
 #ifndef ONLINE_JUDGE
 #include "../../debug.h"
 #else 
 #define debug(x...)
 #endif
+
+using namespace std;
+
 #define sz(x) ((int)((x).size()))
 #define F(i,L,R) for (int i = L; i < R; i++) 
 #define FE(i,L,R) for (int i = L; i <= R; i++)
 #define FF(i,L,R) for (int i = L; i > R; i--)
 #define FFE(i,L,R) for (int i = L; i >= R; i--)
-#define ALL(c) (c).begin(),(c).end() 
-#define RALL(c) (c).rbegin(),(c).rend() 
-#define PRESENT(c,x) ((c).find(x) != (c).end())
-#define IOS ios_base::sync_with_stdio(0)
-#define MOD 1000000007
-#define PI 3.1415926535897932384626
-#define MX 100001
-#define printA(a,L,R) F(i,L,R) cout << a[i] << (i==R-1?'\n':' ')
+#define all(c) (c).begin(),(c).end() 
+#define rall(c) (c).rbegin(),(c).rend() 
+#define present(c,x) ((c).find(x) != (c).end())
+#define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
+#define prints(a,L,R) F(i,L,R) cout << a[i] << (i==R-1?'\n':' ')
 #define f first
 #define s second
 #define ins insert
+#define fif find_if
+#define bkin back_inserter
+#define cpif copy_if
+#define mxel max_element
+#define mnel min_element
 #define lb lower_bound
 #define ub upper_bound
 #define pb push_back
+#define inf 1001001001
+#define mod 1000000007
+#define pi 3.1415926535897932384626
+#define mx 100001
 typedef long long ll;
 typedef unsigned long long ull;
 typedef unsigned int ui;
@@ -44,10 +50,7 @@ int main() {
     freopen("output.txt", "w", stdout);
     freopen("error.txt","w", stderr);
 #endif
-    IOS;
-    cin.tie(0); 
-    cout.tie(0);
-    //solve
+    fastio;
     ;
     return 0;
 }
