@@ -54,21 +54,29 @@ int main() {
     int n,k;
     cin>>n>>k;
     vi p(n), key(256,-1);
-    key[0]=0;
     F(i,0,n) cin>>p[i];
     F(i,0,n) {
         if (key[p[i]]>=0) continue;
-        if (p[i]==0) continue;
-        int pj=p[i];
-        while (pj>0){
-            if (key[pj]>=0 || p[i]-pj == k-1) break; else --pj;
+        int v=p[i];
+        bool case1=false;
+        for(int pj=max(0,p[i]-k+1); pj<p[i]; ++pj){
+            if(key[pj]==-1) {
+                v = pj; 
+                case1=true;
+                break;
+            }
+            if(key[pj]==pj) {
+                v = pj;
+                case1=false;
+                break;
+            }
         }
-        if (key[pj]>=0){
-            FE(ptmp,pj+1,p[i]) key[ptmp]=key[pj];
-        } else {
-            FE(ptmp,pj,p[i]) key[ptmp]=pj;
+        FE(ptmp,v,p[i]) {
+            if(case1 && key[ptmp]>=0) break;
+            key[ptmp] = v;
         }
     }
+    F(i,0,20) cerr<<key[i]<<" ";
     F(i,0,n) cout<<key[p[i]]<<" ";
     return 0;
 }
