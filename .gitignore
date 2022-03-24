@@ -6,5 +6,8 @@ practice/*/debug.h
 practice/*/input.txt
 practice/*/output.txt
 practice/*/error.txt
+*/*/*/input.txt
+*/*/*/output.txt
+*/*/*/error.txt
 
 .vim/.netrwhist
