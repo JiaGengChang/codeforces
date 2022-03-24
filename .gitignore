@@ -2,12 +2,10 @@
 .vscode
 */.vscode
 *.swp
-practice/*/debug.h
-practice/*/input.txt
-practice/*/output.txt
-practice/*/error.txt
-*/*/*/input.txt
-*/*/*/output.txt
-*/*/*/error.txt
+*/*/debug.h
+*/*/*/debug.h
+*/*/*/*/debug.h
+*/*/*.txt
+*/*/*/*.txt
 
 .vim/.netrwhist
