@@ -5,12 +5,14 @@ alias ebrc='vi ~/.bashrc'
 alias evrc='vi ~/.vimrc'
 alias ebpf='vi ~/.bash_profile'
 alias etmp='vi ~/.vim/templates/sol.cpp'
+alias esnp='vi ~/.vim/snippets/cpp.snippets'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias refresh='source ~/.bashrc'
 alias c="clear"
+alias qq="logout"
 
 # create directory and cd into it
 mcd() { mkdir -p "$@" && cd "$@"; }
