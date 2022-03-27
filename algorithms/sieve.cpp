@@ -1,9 +1,8 @@
 //linear sieve
 {
-    const int N = 10000000;
-    vi lp(N+1);
-    vi pr;
-    void sieve() {
+    void sieve(ll N) {
+        vi lp(N+1);
+        vi pr;
         F(i,2,N+1){
             if(lp[i]==0) {
                 lp[i]=i;
@@ -19,7 +18,7 @@
 //sieve of erasthothenes
 {
     const int b = 100000;
-    vector<bool> is_prime(b,true);
+    vector<bool> is_prime(b+1,true);
     vi prime;
     void sieve() {
         F(i,2,b+1){
