@@ -16,7 +16,7 @@ using namespace std;
 #define FFE(i,L,R) for (int i = L; i >= R; i--)
 #define all(c) (c).begin(),(c).end() 
 #define rall(c) (c).rbegin(),(c).rend() 
-#define present(c,x) ((c).find(x) != (c).end())
+#define present(c,x) ((c).find(x,0) != string::npos)
 #define fastio ios_base::sync_with_stdio(0); cin.tie(0); cout.tie(0);
 #define prints(a,L,R) F(i,L,R) cout << a[i] << (i==R-1?'\n':' ')
 #define f first
@@ -60,51 +60,35 @@ int main() {
         string s;
         cin>>s;
         if(n==1) {
-            cout<<(s[0]=='1'?0:1)<<'\n';
+            cout<<0<<'\n';
             continue;
         }
         if(n==2) {
             cout<<(s=="00"?2:0)<<'\n';
             continue;
         }
-        int i=0;
-        int ans=0;
-        while(i<sz(s)-2){
-            if (s[i]=='1') {
-                if(s[i+1]=='0'&&s[i+2]=='0') {
-                    ans+=2;
-                    s.insert(i+2,"11");
-                    i+=3;
-                } else {
-                    ++i;
-                }
+        int ans=count(all(s),'1');
+        while(true){
+            if (present(s,"000")) {
+                s.replace(s.find("000",0),3,"0110110");
                 continue;
             }
-            //case 1: 011
-            if(s[i]=='0' && s[i+1]=='1' && s[i+2]=='1') {
-                i+=2;
-                continue;
-            } 
-            if (s[i+1]=='0'&&s[i+2]=='1') {
-                ans+=2;
-                s.insert(i+1,"11");
-                i+=3;
-                continue;
-            } 
-            if (s[i+1]=='1'&&s[i+2]=='0') {
-                s.insert(i+1,"1");
-                ans++;
-                i+=2;
+            if (present(s,"001")) {
+                s.replace(s.find("001",0),3,"01101");
                 continue;
             }
-            if (s[i+1]=='0'&&s[i+2]=='0'){
-                ans+=4;
-                s.insert(i+2, "11");
-                s.insert(i+1, "11");
-                i+=5;
+            if (present(s,"010")) {
+                s.replace(s.find("010",0),3,"0110");
+                continue;
             }
+            if (present(s,"100")) {
+                s.replace(s.find("100",0),3,"10110");
+                continue;
+            }
+            break;
         }
-        cout<<ans<<'\n';
+        cout<<count(all(s),'1')-ans<<'\n';
+        //cout<<s<<'\n';
     }
     return 0;
 }
