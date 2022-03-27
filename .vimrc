@@ -15,8 +15,11 @@ set background=dark
 
 "build, run, debug cpp files"
 autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -Wall -Wextra -pedantic --std=c++17 -O2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -Wno-variadic-macros % -o %:r -Wl,--stack,268435456<CR>
+autocmd filetype cpp nnoremap <c-1> :w <bar> !g++ -Wall -Wextra -pedantic --std=c++17 -O2 -D_GLIBCXX_DEBUG -D_GLIBCXX_DEBUG_PEDANTIC -D_FORTIFY_SOURCE=2 -Wno-variadic-macros % -o %:r -Wl,--stack,268435456<CR>
 autocmd filetype cpp nnoremap <F10> :!./%:r<CR>
+autocmd filetype cpp nnoremap <c-3> :!./%:r<CR>
 autocmd filetype cpp nnoremap <F12> :!gdb ./%:r <CR>
+autocmd filetype cpp nnoremap <c-4> :!gdb ./%:r <CR>
 
 "window nav"
 nnoremap <c-h> :wincmd h<CR>
@@ -49,3 +52,17 @@ autocmd filetype cpp nnoremap <c-c> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\
 
 "open cpp template"
 :autocmd BufNewFile  *.cpp execute "0r ~/.vim/templates/".input("Template name: ").".cpp"
+
+"vim-plug stuff below"
+call plug#begin()
+Plug 'tpope/vim-sensible'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+call plug#end()
+
+let g:snipMate = { 'snippet_version' : 1 }

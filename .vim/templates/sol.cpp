@@ -8,6 +8,8 @@
 using namespace std;
 
 #define sz(x) ((int)((x).size()))
+#define mt(x) ((x).empty())
+#define FI(it,x) for (auto it=(x).begin(); it!=(x).end(); ++it)
 #define F(i,L,R) for (int i = L; i < R; i++) 
 #define FE(i,L,R) for (int i = L; i <= R; i++)
 #define FF(i,L,R) for (int i = L; i > R; i--)
@@ -28,6 +30,7 @@ using namespace std;
 #define lb lower_bound
 #define ub upper_bound
 #define pb push_back
+#define ppb pop_back
 #define inf 1001001001
 #define mod 1000000007
 #define pi 3.1415926535897932384626
