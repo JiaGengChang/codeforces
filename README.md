@@ -35,7 +35,7 @@ Append these commands from the dotfiles into yours.
 Alternatively, create a symbolic link of the provided dotfiles (```.bashrc, .minttyrc, .vimrc```) into your ```$HOME``` directory. 
 
 ```
-ln -sr codeforces/.vimrc $HOME/.vim
+ln -sr codeforces/.vim $HOME/.vim
 
 ln -s codeforces/.vimrc $HOME/.vimrc
 
