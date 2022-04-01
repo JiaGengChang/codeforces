@@ -2,7 +2,7 @@
 
 A solution bank for division 2 problems on codeforces, and dotfiles for the text editor and terminal I use.
 
-This repo is mainly to help sync my solutions across multiple machines.
+This repo is mainly to help sync my work across machines.
 
 ## Horitonztal mode
 Opened by entering `vs` from command line. Also showing NERDtree vim plugin.
@@ -26,11 +26,11 @@ make
 vim
 ```
 
-This is necessary for compiling and running c++ code. Other packages like ```tree``` and ```python39``` are recommended.
+This is necessary for editing, compiling and running c++ code. Other packages like ```tree``` and ```python39``` are recommended.
 
 ## Terminal setup
 
-Append these commands from the dotfiles into yours. 
+Append the contentes of my dotfiles into yours. 
 
 Alternatively, create a symbolic link of the provided dotfiles (```.bashrc, .minttyrc, .vimrc```) into your ```$HOME``` directory. 
 
@@ -48,7 +48,7 @@ Reopen terminal and commmands such as ```ebrc```, ```evrc``` to edit ```.bashrc`
 
 ## Vim setup
 
-Despite the untradeable snappiness of terminal vim, the look that ships off with cygwin with are terrible. I followed others and used plugins to add some life to this.
+Despite the untradeable snappiness of terminal vim, the default looks that ships off with cygwin with are terrible. I used plugins to add some life to this.
 
 Follow the instructions on https://github.com/junegunn/vim-plug to install the minimalist plugin manager.
 
