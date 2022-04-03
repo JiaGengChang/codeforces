@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include "bits/stdc++.h"
 #ifndef ONLINE_JUDGE
 #include "../../debug.h"
 #else 
@@ -40,10 +40,11 @@ typedef unsigned long long ull;
 typedef unsigned int ui;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
+typedef set<int> si;
 typedef pair<int,int> ii;
-typedef vector<ll> vll;
-typedef vector<vll> vvll;
-typedef pair<ll,ll> llll;
+typedef set<pair<int,int>> sii;
+typedef vector<pair<int,int>> vii;
+typedef vector<bool> vb;
 template<class T> bool ckmin(T& a,const T& b) {return b<a?a=b,1:0;}
 template<class T> bool ckmax(T& a,const T& b) {return b>a?a=b,1:0;}
 template<class T> bool ckval(T& a,const T& b) {return a<0?a=b,1:0;}
