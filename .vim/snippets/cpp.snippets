@@ -28,6 +28,7 @@ snippet modpow "fast modulo exponentiation"
 		return x;
 	}
 
+
 snippet sieve "all primes not greater than n"
 	vll sieve(ll n) {
 		vector<bool> is_prime(n+1,true);
@@ -44,3 +45,10 @@ snippet sieve "all primes not greater than n"
 		return primes;
 	}
 
+snippet fact "compute n! mod"
+	ll factorial(int n) {
+		if(n<0)return -1;
+		ll fn =1ll;
+		while(n--) fn*=n+1;
+		return fn%mod;
+	}
