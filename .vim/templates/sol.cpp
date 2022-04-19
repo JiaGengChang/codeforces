@@ -14,6 +14,8 @@ using namespace std;
 #define FE(i,L,R) for (int i = L; i <= R; i++)
 #define FF(i,L,R) for (int i = L; i > R; i--)
 #define FFE(i,L,R) for (int i = L; i >= R; i--)
+#define rep(i, n) for (int i=0; i<(n); i++)
+#define rep1(i, n) for (int i=1; i<=(n); i++)
 #define all(c) (c).begin(),(c).end() 
 #define rall(c) (c).rbegin(),(c).rend() 
 #define present(c,x) ((c).find(x) != (c).end())
@@ -30,6 +32,7 @@ using namespace std;
 #define lb lower_bound
 #define ub upper_bound
 #define pb push_back
+#define eb emplace_back
 #define ppb pop_back
 #define inf 1001001001
 #define mod 1000000007
