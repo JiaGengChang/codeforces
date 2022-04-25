@@ -14,8 +14,8 @@ using namespace std;
 #define FE(i,L,R) for (int i = L; i <= R; i++)
 #define FF(i,L,R) for (int i = L; i > R; i--)
 #define FFE(i,L,R) for (int i = L; i >= R; i--)
-#define rep(i, n) for (int i=0; i<(n); i++)
-#define rep1(i, n) for (int i=1; i<=(n); i++)
+#define R(i, n) for (int i=0; i<(n); i++)
+#define R1(i, n) for (int i=1; i<=(n); i++)
 #define all(c) (c).begin(),(c).end() 
 #define rall(c) (c).rbegin(),(c).rend() 
 #define present(c,x) ((c).find(x) != (c).end())
@@ -43,11 +43,14 @@ typedef unsigned long long ull;
 typedef unsigned int ui;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
+typedef vector<ll> vll;
+typedef vector<string> vs;
 typedef set<int> si;
 typedef pair<int,int> ii;
 typedef set<pair<int,int>> sii;
 typedef vector<pair<int,int>> vii;
 typedef vector<bool> vb;
+typedef map<int,int> mii;
 template<class T> bool ckmin(T& a,const T& b) {return b<a?a=b,1:0;}
 template<class T> bool ckmax(T& a,const T& b) {return b>a?a=b,1:0;}
 template<class T> bool ckval(T& a,const T& b) {return a<0?a=b,1:0;}
